@@ -7189,7 +7189,7 @@ void taskAPRS(void *pvParameters)
                         else if (config.bt_mode == 2)
                         { // KISS
                             uint8_t pkg[500];
-                            int sz = kiss_wrapper(pkg);
+                            int sz = kiss_wrapper(pkg, buf, size);
 #if defined(CONFIG_IDF_TARGET_ESP32)
                             SerialBT.write(pkg, sz);
 #else
